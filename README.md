@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 술자리 미션 게임
 
-## Getting Started
+술자리를 더욱 재미있게 만들어주는 비밀 미션 게임입니다.
 
-First, run the development server:
+## 게임 규칙
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 게임 진행
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **미션 생성**: 게임 시작 시 9명 중 2명이 랜덤으로 선택되어 각자 비밀 미션을 받습니다.
+2. **미션 확인**: 선택된 사람은 자신의 이름을 클릭하고 개인 비밀번호(4자리)를 입력하여 미션을 확인합니다.
+3. **미션 수행**: 술자리 1차 동안 미션을 수행합니다. (약 1시간)
+4. **추론 시간**: 1차가 끝나면 모든 참가자가 각자 한 사람을 지목하여 미션을 추론합니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 승패 조건
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### 미션 수행자
 
-## Learn More
+- **승리**: 아무에게도 들키지 않으면 승리
+- **패배**: 한 명에게라도 들키면 패배
 
-To learn more about Next.js, take a look at the following resources:
+#### 추론자 (지목한 사람)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **승리**: 미션 수행자를 정확히 맞추면 승리
+- **패배**: 틀리면 패배
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 벌칙
 
-## Deploy on Vercel
+패배한 사람들이 모여서 벌칙을 수행합니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 미션 특징
+
+- 1시간 동안 지속되는 미션
+- 7~15회 수행해야 하는 반복 미션
+- 다른 참가자와 상호작용하는 미션
+- 너무 쉽게 들키지 않는 은밀한 미션
+- 술자리를 재미있게 이끄는 미션
+
+---
+
+## 참가자
+
+1. 김형진
+2. 노다비
+3. 정진철
+4. 최용선
+5. 지서연
+6. 황차해
+7. 양한목
+8. 신국희
+9. 김민철
+
+---
+
+## 사용 방법
+
+### 게임 시작
+
+1. "미션 뽑기!" 버튼 클릭
+2. 2명이 랜덤으로 선택됨
+
+### 개인 미션 확인
+
+1. 하단 참가자 명단에서 자신의 이름 클릭
+2. 개인 비밀번호 4자리 입력
+3. 미션이 있으면 표시, 없으면 "미션이 없습니다" 표시
+
+### 관리자 전체 확인
+
+1. 관리자 비밀번호 6자리 입력
+2. 선택된 2명과 각자의 미션 전체 확인 가능
+
+### 게임 초기화
+
+1. "초기화하기" 버튼 클릭
+2. 새로운 게임 시작 가능
