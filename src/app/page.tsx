@@ -305,7 +305,7 @@ export default function Home() {
             {stage === 'assigned' ? '이름을 클릭하여 개인 미션 확인' : '참가자 명단'}
           </p>
           <div className="flex flex-wrap justify-center gap-2">
-            {['김형진', '노다비', '정진철', '최용선', '지서연', '황차해', '양한목', '신국희', '김민철'].map((name) => (
+            {['신국희', '김형진', '노다비', '정진철', '최용선', '지서연', '황차해', '양한목', '김민철'].map((name) => (
               <button
                 key={name}
                 onClick={() => handlePersonClick(name)}

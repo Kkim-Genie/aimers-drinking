@@ -36,9 +36,9 @@ export async function POST() {
 - 각 미션은 구체적이고 명확하게 작성
 
 미션 예시 스타일:
-- "김민철님이 술을 마시고 잔에 술이 남아있으면 '아~ 잔에 술이 남아있네요'라고 말해야 함 (7회)"
-- "노다비님이 말할 때마다 고개를 끄덕여야 함 (10회)"
-- "정진철님에게 자연스럽게 칭찬을 해야 함 (8회)"
+- "~님이 술을 마시고 잔에 술이 남아있으면 '아~ 잔에 술이 남아있네요'라고 말해야 함 (7회)" => 강력 추천
+- "~님이 말할 때마다 고개를 끄덕여야 함 (10회)"
+- "~님에게 자연스럽게 칭찬을 해야 함 (8회)"
 
 반드시 아래 JSON 형식으로만 응답해. 다른 텍스트는 포함하지 마:
 {
@@ -91,14 +91,12 @@ export async function POST() {
     }
 
     // Update game state
-    await supabase
-      .from("game_state")
-      .upsert({
-        id: 1,
-        stage: "assigned",
-        current_mission_id: data.id,
-        updated_at: new Date().toISOString(),
-      });
+    await supabase.from("game_state").upsert({
+      id: 1,
+      stage: "assigned",
+      current_mission_id: data.id,
+      updated_at: new Date().toISOString(),
+    });
 
     return NextResponse.json({
       success: true,
